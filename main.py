@@ -26,6 +26,8 @@ try:
     employees = get_employee_names_by_city(row_city.id_row, cursor_db)
     response = f"{row_city.name}: {employees}."
     print(response)
+    cursor_db.close()
+    connection_db.close()
 except Error as e:
     print("Ошибка при подключении", e)
     exit()
